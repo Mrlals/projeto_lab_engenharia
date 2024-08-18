@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="Style.css" media="screen"/>
+    <title>Atividade 4</title>
+
+    <h2>Atividade 4:</h2>
+    <h3> Implemente um script JavaScript que solicite ao usuário a entrada de um dado via teclado.</h3>
+    <h3> Em seguida, pergunte se o usuário deseja verificar o tipo do dado informado.</h3>
+    <h3> Caso o usuário confirme escreva no corpo da página o tipo do dado (Number, String, etc.) 
+        caso contrário escreva a mensagem: “Obrigado por visitar esta página”.</h3>
+
+    <script>
+        function verificarTipoDado() {
+            let dado = prompt("Por favor, insira qualquer dado:");
+
+            // verificar o tipo do dado
+            let verificar = confirm("Você deseja verificar o tipo do dado informado?");
+
+            if (verificar) {
+                // Determina o tipo do dado usando typeof
+                let tipoDado = typeof dado;
+
+                document.body.innerHTML = "<p>O tipo do dado informado é: " + tipoDado + ".</p>";
+            } else {
+                document.body.innerHTML = "<p>Obrigado por visitar esta página.</p>";
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <h1>Verificador de Número</h1>
+    <p>Clique no botão abaixo para verificar o tipo de dado</p>
+    <button onclick="verificarTipoDado()">Verificar</button>
+</body>
+</html>

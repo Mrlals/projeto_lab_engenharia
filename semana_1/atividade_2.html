@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="Style.css" media="screen"/>
+    <title>Atividade 2</title>
+
+    <h2>Atividade 2:</h2>
+    <h3> Implemente um script JavaScript que solicite ao usuário um número inteiropositivo.</h3>
+    <h3> Assim que o usuário digitar um valor válido informe em uma janela
+        de alerta se o número é ou não primo.</h3>
+        <script>
+            function verificarPrimo(numero) {
+                // Eliminar números menores ou igual a 1
+                if (numero <= 1) {
+                    return false;
+                }
+                
+                // Verificar se o número é divisível por algum número entre 2 e a raiz quadrada de 'numero'
+                for (let i = 2; i <= Math.sqrt(numero); i++) {
+                    if (numero % i === 0) {
+                        return false; // Não é primo se fro divisível por 'i'
+                    }
+                }
+                return true;
+            }
+            function verificarNumero() {
+                let numero;
+                // Validar inserção de numero inteiro positivo
+                do {
+                    numero = prompt("Por favor, insira um número inteiro positivo:");
+                } while (numero === null || numero.trim() === "" || isNaN(numero) || parseInt(numero) <= 0);
+
+                numero = parseInt(numero);
+    
+                // Validar se o número é primo e exibir a mensagem
+                if (verificarPrimo(numero)) {
+                    alert("O número " + numero + " é primo.");
+                } else {
+                    alert("O número " + numero + " não é primo.");
+                }
+            }
+        </script>
+</head>
+<body>
+    <h1>Verificador de Número</h1>
+    <p>Clique no botão abaixo para verificar se um número é ou não, Primo.</p>
+    <button onclick="verificarNumero()">Verificar Número</button>
+</body>
+</html>

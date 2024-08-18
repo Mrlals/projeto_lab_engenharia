@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="Style.css" media="screen" />
+    <title>Atividade 1</title>
+
+    <h2>Atividade 1:</h2>
+    <h3>Implemente um script JavaScript que solicite ao usuário um número inteiro
+    positivo.</h3><h3>Assim que o usuário digitar um valor válido informe em uma janela
+    de alerta se o número é par ou ímpar.</h3>
+
+    <script>
+        function verificarNumero() {
+            let numero;
+
+            // validar se o número é inteiro positivo
+            do {
+                numero = prompt("Por favor, insira um número inteiro positivo:");
+            } while (numero === null || numero.trim() === "" || isNaN(numero) || parseInt(numero) <= 0);
+
+            // Converter para um número inteiro
+            numero = parseInt(numero);
+
+            // Verificar par ou ímpar
+            if (numero % 2 === 0) {
+                alert("O número " + numero + " é par.");
+            } else {
+                alert("O número " + numero + " é ímpar.");
+            }
+        }
+    </script>
+    
+</head>
+<body>
+    <h1>Verificador de Paridade</h1>
+    <p>Clique no botão abaixo para verificar se um número é par ou ímpar.</p>
+    <button onclick="verificarNumero()">Verificar Número</button>
+</body>
+</html>
