@@ -5,8 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="Style.css" media="screen" />
     <title>Atividade 3</title>
+
+    <h2>Atividade 3:</h2>
+    <h3> Implemente um script que leia uma palavra ou frase de um
+        campo de texto e exiba em uma janela de alert se o texto é ou
+        não um palíndromo.</h3>
+
 </head>
 <body>
+    <div class="input-container">
+        <input type="text" id="texto" placeholder="Digite uma palavra ou frase">
+    </div>
+    <button onclick="verificarPalindromo()">Verificar</button>
+    <script>
+
+        function verificarPalindromo() {
+
+            const texto = document.getElementById('texto').value;
+
+            // Remover espaços e caracteres especiais, e transformar em minúsculas
+            const textoFormatado = texto.replace(/[\W_]/g, '').toLowerCase();
+
+            // Reverter o texto formatado
+            const textoReverso = textoFormatado.split('').reverse().join('');
+
+            // Verificar se o texto é igual ao reverso
+            if (textoFormatado === textoReverso) {
+                alert('O texto é um palíndromo!');
+            } else {
+                alert('O texto não é um palíndromo.');
+            }
+        }
+    </script>
     
 </body>
 </html>

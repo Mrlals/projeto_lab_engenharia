@@ -5,41 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="Style.css" media="screen"/>
     <title>Atividade 3</title>
-
-    <h2>Atividade 3:</h2>
-    <h3> Implemente um script JavaScript que solicite ao usuário um número inteiro positivo.</h3>
-    <h3> Assim que o usuário digitar um valor válido calcule o fatorial do
-        mesmo e exiba o resultado em uma janela de alerta.</h3>
+</head>
+<body>
+    <div class="container">
+        <h1>Atividade 3</h1>
+        <h2>Implemente um script JavaScript que solicite ao usuário um número inteiro positivo.</h2>
+        <h3>Assim que o usuário digitar um valor válido, calcule o fatorial do mesmo e exiba o resultado em uma janela de alerta.</h3>
+        <button onclick="calcularFatorial()">Calcular Fatorial</button>
+    </div>
 
     <script>
         function calcularFatorial() {
-        let numero;
-        do {
-            numero = prompt("Por favor, insira um número inteiro positivo:");
-        } while (numero === null || numero.trim() === "" || isNaN(numero) || parseInt(numero) <= 0);
+            let numero;
+            do {
+                numero = prompt("Por favor, insira um número inteiro positivo:");
+            } while (numero === null || numero.trim() === "" || isNaN(numero) || parseInt(numero) <= 0);
 
-        numero = parseInt(numero);
+            numero = parseInt(numero);
 
-        //calcular o fatorial do número
-        function fatorial(n) {
-            if (n === 0 || n === 1) {
-                return 1;
-            } else {
-                return n * fatorial(n - 1);
+            // Calcular o fatorial do número
+            function fatorial(n) {
+                if (n === 0 || n === 1) {
+                    return 1;
+                } else {
+                    return n * fatorial(n - 1);
+                }
             }
+
+            // Chama a função para calcular o número inserido
+            let resultado = fatorial(numero);
+
+            alert("O fatorial de " + numero + " é " + resultado + ".");
         }
-
-        // Chama a função para calcular o número inserido
-        let resultado = fatorial(numero);
-
-        alert("O fatorial de " + numero + " é " + resultado + ".");
-    }
     </script>
-
-</head>
-<body>
-    <h1>Verificador de Número</h1>
-    <p>Clique no botão abaixo para calcular o ftorial do número digitado</p>
-    <button onclick="calcularFatorial()">calcular Fatorial</button>
 </body>
 </html>

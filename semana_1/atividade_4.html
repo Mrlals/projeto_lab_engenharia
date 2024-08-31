@@ -5,12 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="Style.css" media="screen"/>
     <title>Atividade 4</title>
-
-    <h2>Atividade 4:</h2>
-    <h3> Implemente um script JavaScript que solicite ao usuário a entrada de um dado via teclado.</h3>
-    <h3> Em seguida, pergunte se o usuário deseja verificar o tipo do dado informado.</h3>
-    <h3> Caso o usuário confirme escreva no corpo da página o tipo do dado (Number, String, etc.) 
-        caso contrário escreva a mensagem: “Obrigado por visitar esta página”.</h3>
+</head>
+<body>
+    <div class="container">
+        <h1>Atividade 4</h1>
+        <h2>Implemente um script JavaScript que solicite ao usuário a entrada de um dado via teclado.</h2>
+        <h3>Em seguida, pergunte se o usuário deseja verificar o tipo do dado informado.</h3>
+        <h3>Caso o usuário confirme, escreva no corpo da página o tipo do dado (Number, String, etc.) 
+        caso contrário, escreva a mensagem: “Obrigado por visitar esta página”.</h3>
+        <button onclick="verificarTipoDado()">Verificar</button>
+        <div class="result"></div>
+    </div>
 
     <script>
         function verificarTipoDado() {
@@ -20,20 +25,23 @@
             let verificar = confirm("Você deseja verificar o tipo do dado informado?");
 
             if (verificar) {
-                // Determina o tipo do dado usando typeof
-                let tipoDado = typeof dado;
+                // Verifica se o dado é um número
+                let tipoDado;
+                if (dado === null) {
+                    tipoDado = "null";
+                } else if (dado.trim() === "") {
+                    tipoDado = "string (vazia)";
+                } else if (!isNaN(dado) && !isNaN(parseFloat(dado))) {
+                    tipoDado = "number";
+                } else {
+                    tipoDado = "string";
+                }
 
-                document.body.innerHTML = "<p>O tipo do dado informado é: " + tipoDado + ".</p>";
+                document.querySelector('.result').innerHTML = "<p>O tipo do dado informado é: " + tipoDado + ".</p>";
             } else {
-                document.body.innerHTML = "<p>Obrigado por visitar esta página.</p>";
+                document.querySelector('.result').innerHTML = "<p>Obrigado por visitar esta página.</p>";
             }
         }
     </script>
-
-</head>
-<body>
-    <h1>Verificador de Número</h1>
-    <p>Clique no botão abaixo para verificar o tipo de dado</p>
-    <button onclick="verificarTipoDado()">Verificar</button>
 </body>
 </html>

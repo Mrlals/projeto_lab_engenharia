@@ -5,8 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="Style.css" media="screen" />
     <title>Atividade 2</title>
+
+    <h2>Atividade 2:</h2>
+    <h3>Pesquise a utilização do método setTimeout() e implemente
+        um relógio que atualize o horário a cada segundo:</h3>
+
 </head>
 <body>
+    <h1>Relógio</h1>
+
+    <div id="relogio"></div>
+
+    <script>
+
+        function atualizarRelogio() {
+
+            const agora = new Date();
     
+            // Formatar para HH:MM:SS
+            const horaFormatada = agora.toLocaleTimeString();
+    
+            // Exibir a hora com id 'relogio'
+            document.getElementById('relogio').innerText = horaFormatada;
+    
+            // Chamar a função novamente após 1 segundo
+            setTimeout(atualizarRelogio, 1000);
+        }
+    
+        atualizarRelogio();
+    </script>
+
 </body>
 </html>
