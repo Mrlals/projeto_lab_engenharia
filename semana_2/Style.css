@@ -62,7 +62,6 @@ h3 a:active {
 }
 
 button {
-    button-align: center;
     padding: 12px 24px;
     font-size: 16px;
     border-radius: 10px;
@@ -111,4 +110,10 @@ input[type="text"]:not(:placeholder-shown) + label {
     left: 8px;
     font-size: 12px;
     color: #6200ea;
+}
+
+#relogio {
+    font-size: 96px;
+    color: #333;
+    margin: 20px;
 }

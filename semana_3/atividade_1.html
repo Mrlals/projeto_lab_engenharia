@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="Style.css" media="screen" />
+    <title>Atividade 1</title>
+</head>
+<body>
+    <h1>Formulário Array</h1>
+    <h2>Atividade 1:</h2>
+    <h3>Implemente um script com um array cujos valores sejam adicionados dinamicamente pelo usuário
+        utilizando-se formulário.</h3> 
+    <h3>A cada nova inserção exiba todos os dados cadastrados em ordem alfabética em
+        uma lista ordenada do html.</h3>
+
+    <!-- Form para adicionar o valor -->
+    <form id="formulario">
+        <input type="text" id="inputValor" placeholder="Digite um valor" required>
+        <button type="submit">Adicionar</button>
+    </form>
+
+    <!-- Lista ordenada para exibir os valores inseridos pelo usuário-->
+    <ol id="listaValores"></ol>
+
+    <script>
+        const valores = [];
+        //captura informações do form
+        const formulario = document.getElementById('formulario');
+        //captura informações da lista
+        const listaValores = document.getElementById('listaValores');
+
+        // Adiciona um novo valor ao array e faz a atualização da lista
+        formulario.addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita que a página seja recarregada ao enviar o formulário
+            
+            // Insere o valor do input no array
+            const valor = document.getElementById('inputValor').value.trim();
+            if (valor) {
+                valores.push(valor);
+                valores.sort(); // Organiza emm ordem alfabética
+                atualizarLista(); // Atualiza a lista apresentada em tela
+                formulario.reset(); // Limpa o campo de entrada para nova inserção no form
+            }
+        });
+
+        // Atualiza a lista
+        function atualizarLista() {
+            // Faz a limpeza do conteúdo atual da lista
+            listaValores.innerHTML = '';
+
+            // Cria os itens da lista para cada valor adicionado no array
+            valores.forEach(valor => {
+                const item = document.createElement('li');
+                item.textContent = valor;
+                listaValores.appendChild(item);
+            });
+        }
+    </script>
+</body>
+</html>
