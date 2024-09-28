@@ -58,7 +58,7 @@ class Professor extends Pessoa {
         super(nome, email, telefoneFixo, telefoneCelular, dataNascimento);
         this.areaAtuacao = areaAtuacao;
         this.matricula = matricula;
-        this.lattes = lattes; // Adicionando lattes aqui
+        this.lattes = lattes;
     }
 
     validarMatricula() {
@@ -69,10 +69,6 @@ class Professor extends Pessoa {
         return this.areaAtuacao !== '';
     }
 
-    validarLattes() {
-        const regex = /^(https?:\/\/)?(www\.)?lattes\.cnpq\.br\/[A-Za-z0-9._-]+$/;
-        return regex.test(this.lattes);
-    }
 }
 
 function validarFormulario() {
