@@ -111,3 +111,5 @@ input[type="text"]:not(:placeholder-shown) + label {
     font-size: 12px;
     color: #6200ea;
 }
+
+
