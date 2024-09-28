@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="Style.css" media="screen" />
+    <title>Atividade 1</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Atividade de Formulário:</h1>
+        <form id="cadastroForm" onsubmit="return validarFormulario()">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" onblur="validarNome()">
+                <span id="nomeErro" class="error"></span>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group" style="width: 75%;">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Digite seu email" onblur="validarEmail()">
+                    <span id="emailErro" class="error"></span>
+                </div>
+
+                <div class="form-group" style="width: 20%;">
+                    <label for="dataNascimento">Data Nascimento:</label>
+                    <input type="text" id="dataNascimento" name="dataNascimento" placeholder="DD/MM/AAAA" onblur="validarDataNascimento()">
+                    <span id="dataNascimentoErro" class="error"></span>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group" style="width: 35%;">
+                    <label for="telefoneFixo">Telefone Fixo:</label>
+                    <input type="text" id="telefoneFixo" name="telefoneFixo" placeholder="(XX)XXXX-XXXX" onblur="validarTelefoneFixo()">
+                    <span id="telefoneFixoErro" class="error"></span>
+                </div>
+
+                <div class="form-group" style="width: 35%;">
+                    <label for="telefoneCelular">Telefone Celular:</label>
+                    <input type="text" id="telefoneCelular" name="telefoneCelular" placeholder="(XX)XXXXX-XXXX" onblur="validarTelefoneCelular()">
+                    <span id="telefoneCelularErro" class="error"></span>
+                </div>
+                
+                <div class="form-group radio-group" style="width: 20%;">
+                    <div class="radio-option">
+                        <input type="radio" id="professor" name="perfil" value="Professor" onchange="mostrarCamposAdicionais()">
+                        <label for="professor">Professor</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="aluno" name="perfil" value="Aluno" onchange="mostrarCamposAdicionais()">
+                        <label for="aluno">Aluno</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row" id="campoArea" style="display:none;">
+                <div class="form-group" style="width: 65%;">
+                    <label for="areaAtuacao">Área de Atuação:</label>
+                    <input type="text" id="areaAtuacao" name="areaAtuacao" placeholder="Digite sua área de atuação" onblur="validarAreaAtuacao()">
+                    <span id="areaAtuacaoErro" class="error"></span>
+                </div>
+
+                <div class="form-group" style="width: 30%;">
+                    <label for="matricula">Matrícula:</label>
+                    <input type="text" id="matricula" name="matricula" placeholder="Digite sua matrícula" onblur="validarMatricula()">
+                    <span id="matriculaErro" class="error"></span>
+                </div>
+            </div>
+
+            <div class="form-row" id="campoCurso" style="display:none;">
+                <div class="form-group" style="width: 65%;">
+                    <label for="curso">Curso:</label>
+                    <input type="text" id="curso" name="curso" placeholder="Digite seu curso" onblur="validarCurso()">
+                    <span id="cursoErro" class="error"></span>
+                </div>
+
+                <div class="form-group" style="width: 30%;">
+                    <label for="matricula">Matrícula:</label>
+                    <input type="text" id="matricula" name="matricula" placeholder="Digite sua matrícula" onblur="validarMatricula()">
+                    <span id="matriculaErro" class="error"></span>
+                </div>
+            </div>
+
+            <div class="form-group" id="campoLattes" style="display:none;">
+                <label for="lattes">Lattes:</label>
+                <input type="text" id="lattes" name="lattes" placeholder="Digite o link do seu currículo Lattes" onblur="validarLattes()">
+                <span id="lattesErro" class="error"></span>
+            </div>
+
+            <div class="form-buttons">
+                <button type="submit">Enviar</button>
+                <button type="reset">Redefinir</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
