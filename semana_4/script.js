@@ -37,6 +37,7 @@ class Pessoa {
     }
 }
 
+
 class Aluno extends Pessoa {
     constructor(nome, email, telefoneFixo, telefoneCelular, dataNascimento, curso, matricula) {
         super(nome, email, telefoneFixo, telefoneCelular, dataNascimento);
