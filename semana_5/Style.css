@@ -1,115 +1,80 @@
 body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #007bff;
+}
+
+form {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    background-color: #f5f5f5;
-    font-family: Arial, sans-serif;
-    text-align: center;
+    margin-bottom: 20px;
 }
 
-h1{
-    text-decoration: none;
-    text-align: center;
-    color: rgb(120, 120, 120);
-}
-
-h2 {
-    margin: 16px 0;
-    color: #276dd5;
-    font-size: 20px;
-    text-align: center;
-}
-
-h2 a {
-    text-decoration: none;
-    color: inherit;
-    transition: color 0.3s;
-}
-
-h2 a:hover {
-    color: #3700b3;
-}
-
-h3 {
-    margin: 0;
-    font-size: 24px;
-    text-align: center;
-}
-
-h3 a {
-    display: block;
-    text-decoration: none;
-    color: #6200ea;
-    background-color: #fff;
-    padding: 15px 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+input {
+    padding: 10px;
     margin-bottom: 10px;
-    transition: background-color 0.3s, box-shadow 0.3s;
-}
-
-h3 a:hover {
-    background-color: #ede7f6;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-h3 a:active {
-    background-color: #d1c4e9;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 button {
-    padding: 12px 24px;
-    font-size: 16px;
-    border-radius: 4px;
-    background-color: #6200ea;
-    color: #FFF;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
     border: none;
+    border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s, box-shadow 0.3s;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 button:hover {
-    background-color: #3700b3;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    background-color: #0056b3;
 }
 
-input[type="text"] {
-    width: 100%;
-    padding: 12px;
-    border-radius: 4px;
+.tarefas-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.tarefas-list li {
+    padding: 10px;
+    margin: 5px 0;
     border: 1px solid #ccc;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    outline: none;
-    font-size: 16px;
-    transition: border-color 0.3s, box-shadow 0.3s;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-input[type="text"]:focus {
-    border-color: #6200ea;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+.tarefas-list span.concluida {
+    text-decoration: line-through;
+    color: #6c757d;
 }
 
-label {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    font-size: 16px;
-    color: #aaa;
-    pointer-events: none;
-    transition: 0.3s;
+.tarefas-list button {
+    background-color: #28a745;
+    margin-left: 5px;
 }
 
-input[type="text"]:focus + label,
-input[type="text"]:not(:placeholder-shown) + label {
-    top: -8px;
-    left: 8px;
-    font-size: 12px;
-    color: #6200ea;
+.tarefas-list button:nth-child(2) {
+    background-color: #ffc107;
 }
 
-
+.tarefas-list button:nth-child(3) {
+    background-color: #dc3545;
+}
