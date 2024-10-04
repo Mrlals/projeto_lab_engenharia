@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="Style.css" media="screen" />
+    <title>Letreiro com React</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const Letreiro = () => {
+            const [textoAtual, setTextoAtual] = React.useState('');
+            const textoCompleto = "Venha estudar na Fatec";
+
+            React.useEffect(() => {
+                let index = 0;
+                const intervalo = setInterval(() => {
+                    setTextoAtual((prev) => prev + textoCompleto[index]);
+                    index++;
+                    if (index === textoCompleto.length) {
+                        clearInterval(intervalo);
+                    }
+                }, 150);
+
+                return () => clearInterval(intervalo);
+            }, []);
+
+            return <h1>{textoAtual}</h1>;
+        };
+
+        ReactDOM.render(<Letreiro />, document.getElementById('root'));
+    </script>
+</body>
+</html>
